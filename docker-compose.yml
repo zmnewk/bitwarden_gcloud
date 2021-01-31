@@ -140,9 +140,7 @@ services:
     - WATCHTOWER_SCHEDULE
     - TZ
 
-  logdna:  
-    autoredeploy: true   
-    deployment_strategy: every_node  
+  logdna:   
     environment:  
     - LOGDNA_KEY=b23ba1b1be429a5346359d404486d44d  
     - FILTER_NAME=bitwarden
