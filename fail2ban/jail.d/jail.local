@@ -5,8 +5,8 @@ maxretry = 5
 # To enable email alerts, uncomment `destemail` and `sender` below,
 # enter your destination and sender emails in the fields,
 # and uncomment the `action_mwl` action in the jails below.
-#destemail = email you want to send to
-#sender = email you want to send from
+destemail = zander.newcombe@gmail.com
+#sender = bitwarden@mail.zander.tools
 
 [bitwarden]
 enabled = true
@@ -14,7 +14,7 @@ port = 80,443,8081
 filter = bitwarden
 logpath = /bitwarden/bitwarden.log
 action = iptables-allports[name=bitwarden, chain=FORWARD]
-#         %(action_mwl)s
+         %(action_mwl)s
 
 [bitwarden-admin]
 enabled = true
@@ -22,4 +22,4 @@ port = 80,443
 filter = bitwarden-admin
 logpath = /bitwarden/bitwarden.log
 action = iptables-allports[name=bitwarden, chain=FORWARD]
-#         %(action_mwl)s
+         %(action_mwl)s
