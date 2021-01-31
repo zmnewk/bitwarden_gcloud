@@ -140,15 +140,15 @@ services:
     - WATCHTOWER_SCHEDULE
     - TZ
 
-    logspout:
-    environment:
-        - LOGDNA_KEY=d041d71ec2f10c0a24163742cf9863a1
-    image: logdna/logspout:latest
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      mode: global
+  logspout:
+  environment:
+      - LOGDNA_KEY=d041d71ec2f10c0a24163742cf9863a1
+  image: logdna/logspout:latest
+  restart: always
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  deploy:
+    mode: global
 
 volumes:
   caddycerts:
