@@ -140,20 +140,15 @@ services:
     - WATCHTOWER_SCHEDULE
     - TZ
 
-
-  logspout:
-    environment:
-        - LOGDNA_KEY=d041d71ec2f10c0a24163742cf9863a1
-        - FILTER_NAME=
-        - FILTER_LABELS=
-        - HOSTNAME=
-        - TAGS=
-    image: logdna/logspout:latest
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      mode: global
+  logdna:  
+    autoredeploy: true   
+    deployment_strategy: every_node  
+    environment:  
+      - LOGDNA_KEY=b23ba1b1be429a5346359d404486d44d  
+      - FILTER_NAME=bitwarden
+    image: 'logdna/logspout:latest'  
+    restart: always  
+    volumes:  - '/var/run/docker.sock:/var/run/docker.sock'
 
 
 volumes:
