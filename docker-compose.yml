@@ -144,12 +144,12 @@ services:
     autoredeploy: true   
     deployment_strategy: every_node  
     environment:  
-      - LOGDNA_KEY=b23ba1b1be429a5346359d404486d44d  
-      - FILTER_NAME=bitwarden
+    - LOGDNA_KEY=b23ba1b1be429a5346359d404486d44d  
+    - FILTER_NAME=bitwarden
     image: 'logdna/logspout:latest'  
     restart: always  
-    volumes:  - '/var/run/docker.sock:/var/run/docker.sock'
-
+    volumes:
+    - '/var/run/docker.sock:/var/run/docker.sock'
 
 volumes:
   caddycerts:
